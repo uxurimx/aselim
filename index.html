@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASELIM - Apoyo Legal Integral para la Mujer</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             /* Paleta de colores inspirada en Imagen 2 */
@@ -43,11 +44,19 @@
         }
 
         .logo {
-            font-weight: bold;
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            letter-spacing: 2px;
+            display: flex;
+    align-items: center;
+    gap: 10px; /* Separa la imagen del texto */
+    font-weight: bold;
+    font-size: 1.2rem;
         }
+
+        .logo img {
+    height: 40px; /* Ajusta este tamaño según prefieras */
+    width: auto;  /* Mantiene la proporción */
+    border-radius: 4px; /* Opcional: redondea un poco las esquinas */
+    object-fit: contain;
+}
 
         .nav-links {
             list-style: none;
@@ -70,9 +79,60 @@
         }
 
         /* --- HERO SECTION --- */
+
+        /*.hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                              url('assets/logo.jpeg'); 
+            
+            /* Ajustes para que la imagen cubra toda la sección */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            
+            /* Altura y centrado del contenido */
+            min-height: 100vh; /* Ocupa el alto de la pantalla */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white; /* Color de texto para que resalte sobre el fondo oscuro */
+        }*/
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        /* Estilo básico para el botón (opcional) */
+        .btn-cta {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background-color: #ffffff;
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
         .hero {
             height: 80vh;
-            background: var(--bg-gradient);
+            /*background: var(--bg-gradient);*/
+            background-image: linear-gradient(rgba(255, 149, 149, 0.5), rgba(0, 0, 0, 0.5)), url('assets/familia.webp'); 
+            
+            /* Ajustes para que la imagen cubra toda la sección */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            
+            /* Altura y centrado del contenido */
+            min-height: 100vh; /* Ocupa el alto de la pantalla */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+
             display: flex;
             align-items: center;
             justify-content: center;
@@ -88,12 +148,14 @@
             font-size: 3.5rem;
             color: var(--primary-color);
             margin-bottom: 1rem;
+                text-shadow: 1px 2px 10px #ffffff;
         }
 
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
-            color: #555;
+            color: #ffffff;
+            text-shadow: -1px 1px 5px black;
         }
 
         .btn-cta {
@@ -201,6 +263,70 @@
             color: var(--primary-color);
         }
 
+        .member p {
+    margin: 8px 0;
+}
+
+.contact-link {
+    text-decoration: none; /* Quita el subrayado */
+    color: #333; /* Color de texto oscuro */
+    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre icono y texto */
+}
+
+/* Color verde al pasar el mouse por WhatsApp */
+.contact-link:hover .fa-whatsapp {
+    color: #25D366;
+}
+
+/* Color azul al pasar el mouse por el sobre */
+.contact-link:hover .fa-envelope {
+    color: #007bff;
+}
+
+.contact-link i {
+    font-size: 1.1rem;
+}
+
+/* Contenedor para poner los iconos uno al lado del otro */
+.member-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espacio entre los iconos */
+    margin-top: 15px;
+}
+
+/* Estilo base para cada círculo de icono */
+.contact-icon {
+    text-decoration: none;
+    font-size: 1.2rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Los hace circulares */
+    background-color: #f4f4f4; /* Color de fondo suave */
+    transition: all 0.3s ease;
+    color: #555; /* Color del icono por defecto */
+}
+
+/* Efectos al pasar el mouse (Hover) */
+.contact-icon:hover {
+    transform: translateY(-3px); /* Pequeño salto hacia arriba */
+    color: white;
+}
+
+.contact-icon.whatsapp:hover {
+    background-color: #25D366; /* Verde WhatsApp */
+}
+
+.contact-icon.email:hover {
+    background-color: #007bff; /* Azul Correo */
+}
+
         /* --- CONTACTO / FOOTER --- */
         .contact-container {
             background: #2c3e50;
@@ -257,7 +383,10 @@
 <body>
 
     <nav>
-        <div class="logo">ASELIM</div>
+        <div class="logo">
+            <img src="assets/logo.jpeg" alt="Logo ASELIM">
+            <span>ASELIM</span>
+        </div>
         <ul class="nav-links">
             <!-- <li><a href="#inicio">Bienvenida</a></li> -->
             <li><a href="#servicios">Servicios</a></li>
@@ -282,8 +411,10 @@
                 <h3>Servicio Médico</h3>
                 <ul>
                     <li>Orientación sobre derechos de salud y maternidad.</li>
-                    <li>Defensa ante negligencias médicas.</li>
-                    <li>Gestión de incapacidades permanentes.</li>
+    <li>Maternidad y Familiares</li>
+    <li>Servicio médico básico</li>
+    <li>Servicio médico con semanas acumuladas y puntos al Infonavit.</li>
+    <li>Servicio médico con aportaciones al Afore e Infonavit.</li>
                 </ul>
             </div>
             <div class="service-card">
@@ -291,17 +422,11 @@
                 <h3>Trámites Administrativos</h3>
                 <ul>
                     <li>Asesoría legal ante el Seguro Social.</li>
-                    <li>Defensa en casos de despido injustificado.</li>
-                    <li>Recuperación de aportaciones y trámites ante instituciones.</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-hands-holding-child"></i>
-                <h3>Maternidad y Familiares</h3>
-                <ul>
-                    <li>Licencias de maternidad y lactancia.</li>
-                    <li>Pensiones alimenticias y custodias.</li>
-                    <li>Divorcios y juicios de patria potestad.</li>
+                    <li>Asesoría de Pensiones.</li>
+                    <li>Búsqueda de NSS.</li>
+                    <li>Reporte de semanas cotizadas SISEC.</li>
+                    <li>Constancias de situación fiscal RFC actualizados.</li>
+                    <li>Búsqueda de vigencias de derechos.</li>
                 </ul>
             </div>
         </div>
@@ -309,35 +434,56 @@
 
     <section class="directory" id="directorio">
         <h2 class="section-title">Directorio con Cobertura Nacional</h2>
-        <p style="text-align: center; margin-bottom: 3rem;">Presencia estratégica en CDMX, Guadalajara y Monterrey para brindarte seguridad en todo México.</p>
+        <p style="text-align: center; margin-bottom: 3rem;">Presencia estratégica en CDMX, Guadalajara, Aguascalientes y Monterrey para brindarte seguridad en todo México.</p>
         
         <div class="team-grid">
             <div class="member">
-                <img src="assets/1.jpeg?auto=format&fit=crop&q=80&w=200" alt="Abogada 1">
+                <img src="assets/1.png?auto=format&fit=crop&q=80&w=200" alt="Abogada 1">
                 <h4>Lic. Liz</h4>
-                <p>Guadalajara</p>
-                <p>52 6678 56 32 65</p>
-                <p>liz@aselim.mx</p>
+                <div class="member-social">
+                    <a href="https://wa.me/526678563265" target="_blank" class="contact-icon whatsapp" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:liz@aselim.mx" class="contact-icon email" title="Enviar Correo">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                </div>
             </div>
             <div class="member">
-                <img src="assets/2.jpeg?auto=format&fit=crop&q=80&w=200" alt="Abogada 2">
+                <img src="assets/2.png?auto=format&fit=crop&q=80&w=200" alt="Abogada 2">
                 <h4>Lic. Nay</h4>
-                <p>Monterrey</p><p>52 6678 56 32 65</p>
-                <p>liz@aselim.mx</p>
+                <div class="member-social">
+                    <a href="https://wa.me/526678563265" target="_blank" class="contact-icon whatsapp" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:liz@aselim.mx" class="contact-icon email" title="Enviar Correo">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                </div>
             </div>
             <div class="member">
-                <img src="assets/3.jpeg?auto=format&fit=crop&q=80&w=200" alt="Abogada 3">
+                <img src="assets/3.png?auto=format&fit=crop&q=80&w=200" alt="Abogada 3">
                 <h4>Lic. Mariel</h4>
-                <p>Ciudad de México</p>
-                <p>52 6678 56 32 65</p>
-                <p>liz@aselim.mx</p>
+                <div class="member-social">
+                    <a href="https://wa.me/526678563265" target="_blank" class="contact-icon whatsapp" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:liz@aselim.mx" class="contact-icon email" title="Enviar Correo">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                </div>
             </div>
             <div class="member">
-                <img src="assets/4.jpeg?auto=format&fit=crop&q=80&w=200" alt="Abogada 4">
+                <img src="assets/4.png?auto=format&fit=crop&q=80&w=200" alt="Abogada 4">
                 <h4>Lic. Isabela</h4>
-                <p>Cobertura Nacional</p>
-                <p>52 6678 56 32 65</p>
-                <p>liz@aselim.mx</p>
+                <div class="member-social">
+                    <a href="https://wa.me/526678563265" target="_blank" class="contact-icon whatsapp" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:liz@aselim.mx" class="contact-icon email" title="Enviar Correo">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -360,12 +506,6 @@
                     </a>
                     <span>Aselim Asesoria de Afiliacion</span>
                 </div>
-            </div>
-            <div class="contact-form">
-                <input type="text" placeholder="Tu Nombre">
-                <input type="email" placeholder="Correo Electrónico">
-                <textarea rows="4" placeholder="¿En qué podemos ayudarte?"></textarea>
-                <button type="button">ENVIAR MENSAJE</button>
             </div>
         </div>
     </section>
